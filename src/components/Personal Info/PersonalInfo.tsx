@@ -6,8 +6,6 @@ import { actionCreators, State } from '../../state';
 import { alertMessage, PersonalData } from '../../utils';
 
 const PersonalInfo: React.FC = () => {
-  console.log('personalInfo');
-
   const [next, setNext] = useState<Boolean>(false);
   const dispatch = useDispatch();
   const { personalInfo } = bindActionCreators(actionCreators, dispatch);

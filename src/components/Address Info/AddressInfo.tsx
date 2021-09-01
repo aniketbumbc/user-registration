@@ -68,7 +68,7 @@ const AddressInfo: React.FC = () => {
 
   return (
     <div>
-      {!next && (
+      {!next && !previous && (
         <form className='form' onSubmit={handleFormSubmit}>
           <h3 className='text-center'> Address Information </h3>
           <div className='form-step form-step-active'>
