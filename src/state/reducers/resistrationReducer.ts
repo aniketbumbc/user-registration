@@ -22,7 +22,18 @@ const initialState: Customer = {
   zipCode: '',
 };
 
+/**
+ *  type of action
+ */
+
 type Action = PersonalInfoAction | PaymentInfoAction | AddressInfoAction;
+
+/**
+ * Reducer function whihch take action and state
+ * return state
+ * @param state
+ * @param action
+ */
 
 const registrationReducer = (
   state: Customer = initialState,
@@ -40,7 +51,11 @@ const registrationReducer = (
   }
 };
 
-export default registrationReducer;
+/**
+ * Method set and return state for PersonalData
+ * @param state
+ * @param payload
+ */
 
 const setPersonalInfo = (state: Customer, payload: PersonalData) => {
   const firstName = payload.firstName;
@@ -53,6 +68,12 @@ const setPersonalInfo = (state: Customer, payload: PersonalData) => {
     phoneNumber,
   };
 };
+
+/**
+ * Method set and return state for AddressData
+ * @param state
+ * @param payload
+ */
 
 const setAddressInfo = (state: Customer, payload: AddressData) => {
   const streetName = payload.streetName;
@@ -68,6 +89,12 @@ const setAddressInfo = (state: Customer, payload: AddressData) => {
   };
 };
 
+/**
+ * Method set and return state for Payment
+ * @param state
+ * @param payload
+ */
+
 const setPaymentInfo = (state: Customer, payload: Payment) => {
   const accountOwner = payload.owner;
   const ibnNumber = payload.iban;
@@ -77,3 +104,5 @@ const setPaymentInfo = (state: Customer, payload: Payment) => {
     ibnNumber,
   };
 };
+
+export default registrationReducer;

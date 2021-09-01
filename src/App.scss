@@ -75,3 +75,12 @@ body {
     color: $form-header-color;
   }
 }
+
+.success {
+  color: $form-header-color;
+  border: 1px solid $border-color;
+  text-align: center;
+  .paymentId {
+    color: rgb(53, 148, 226);
+  }
+}

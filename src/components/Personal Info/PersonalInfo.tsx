@@ -16,6 +16,12 @@ const PersonalInfo: React.FC = () => {
     // eslint-disable-next-line
   }, []);
 
+  /**
+   * Method is submit form data to state and call local stoarage method.
+   * Check value should not be null
+   * @param event
+   */
+
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     if (
@@ -37,12 +43,22 @@ const PersonalInfo: React.FC = () => {
     }
   };
 
+  /**
+   *  Method set data to localstoarage
+   *
+   * @param personalDetails
+   */
+
   const setLocalstorageData = (personalDetails: PersonalData): void => {
     localStorage.setItem('personalInfo', 'personalInfo');
     localStorage.setItem('firstName', personalDetails.firstName);
     localStorage.setItem('lastName', personalDetails.lastName);
     localStorage.setItem('phoneNumber', String(personalDetails.phoneNumber));
   };
+
+  /**
+   *  Method getData from local storage and pass to reducer method to set state
+   */
 
   const getLocalstorageData = (): void => {
     if (localStorage.getItem('personalInfo')) {

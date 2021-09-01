@@ -22,11 +22,21 @@ const PaymentInfo: React.FC = React.memo(() => {
     // eslint-disable-next-line
   }, []);
 
+  /**
+   *  Method set data to localstoarage
+   *
+   * @param paymentDetails
+   */
+
   const setLocalstorageData = (paymentDetails: Payment): void => {
     localStorage.setItem('paymentInfo', 'paymentInfo');
     localStorage.setItem('owner', paymentDetails.owner);
     localStorage.setItem('iban', paymentDetails.iban);
   };
+
+  /**
+   *  Method getData from local storage and pass to reducer method to set state
+   */
 
   const getLocalstorageData = (): void => {
     paymentInfo({
@@ -34,6 +44,13 @@ const PaymentInfo: React.FC = React.memo(() => {
       iban: String(localStorage.getItem('iban')),
     });
   };
+
+  /**
+   * Method is submit form data to state and call local stoarage method.
+   * Check value should not be null.
+   * Call sendPaymentDetails method for post data.
+   * @param event
+   */
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
@@ -54,8 +71,13 @@ const PaymentInfo: React.FC = React.memo(() => {
     }
   };
 
+  /**
+   * Method used post data to api and set paymentId
+   * @param paymentDetails
+   */
+
   const sendPaymentDetails = async (paymentDetails: Payment) => {
-    paymentDetails['customerId'] = 2;
+    paymentDetails['customerId'] = Math.floor(Math.random() * (100 - 1) + 1);
 
     try {
       const response = await fetch(demoPaymentApi, {

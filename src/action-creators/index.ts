@@ -9,6 +9,12 @@ import {
 } from '../utils';
 import { Dispatch } from 'redux';
 
+/**
+ * Action creator function for PersonalData
+ * method call reducer function and send payload to it.
+ * @param data {payload}
+ */
+
 export const personalInfo = (data: PersonalData) => {
   return (dispatch: Dispatch<PersonalInfoAction>) => {
     dispatch({
@@ -18,6 +24,12 @@ export const personalInfo = (data: PersonalData) => {
   };
 };
 
+/**
+ * Action creator function for AddressData
+ * method call reducer function and send payload to it.
+ * @param data {payload}
+ */
+
 export const addressInfo = (data: AddressData) => {
   return (dispatch: Dispatch<AddressInfoAction>) => {
     dispatch({
@@ -26,6 +38,12 @@ export const addressInfo = (data: AddressData) => {
     });
   };
 };
+
+/**
+ * Action creator function for Payment
+ * method call reducer function and send payload to it.
+ * @param data {payload}
+ */
 
 export const paymentInfo = (data: Payment) => {
   return (dispatch: Dispatch<PaymentInfoAction>) => {

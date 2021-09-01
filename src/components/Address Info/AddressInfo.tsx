@@ -20,6 +20,12 @@ const AddressInfo: React.FC = () => {
     // eslint-disable-next-line
   }, []);
 
+  /**
+   *  Method set data to localstoarage
+   *
+   * @param addressDetails {AddressData}
+   */
+
   const setLocalstorageData = (addressDetails: AddressData): void => {
     localStorage.setItem('addressInfo', 'addressInfo');
     localStorage.setItem('streetName', addressDetails.streetName);
@@ -27,6 +33,10 @@ const AddressInfo: React.FC = () => {
     localStorage.setItem('houseNumber', String(addressDetails.houseNumber));
     localStorage.setItem('zipCode', String(addressDetails.zipCode));
   };
+
+  /**
+   *  Method getData from local storage and pass to reducer method to set state
+   */
 
   const getLocalstorageData = (): void => {
     addressInfo({
@@ -36,6 +46,12 @@ const AddressInfo: React.FC = () => {
       zipCode: Number(localStorage.getItem('zipCode')),
     });
   };
+
+  /**
+   * Method is submit form data to state and call local stoarage method.
+   * Check value should not be null
+   * @param event
+   */
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
