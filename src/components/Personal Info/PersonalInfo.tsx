@@ -59,40 +59,37 @@ const PersonalInfo: React.FC = () => {
       {!next && (
         <form className='form' onSubmit={handleFormSubmit}>
           <h3 className='text-center'> Personal Information </h3>
-
-          <div className='form-step form-step-active'>
-            <div className='input-group'>
-              <label htmlFor='firstName'>First Name</label>
-              <input
-                type='text'
-                name='firstName'
-                placeholder='First Name'
-                defaultValue={state['firstName']}
-              />
-            </div>
-            <div className='input-group'>
-              <label htmlFor='lastName'>Last Name</label>
-              <input
-                type='text'
-                name='lastName'
-                id='lastName'
-                placeholder='Last Name'
-                defaultValue={state['lastName']}
-              />
-            </div>
-            <div className='input-group'>
-              <label htmlFor='phoneNumber'>Number</label>
-              <input
-                type='text'
-                name='phoneNumber'
-                id='phoneNumber'
-                placeholder='Phone Number'
-                defaultValue={state['phoneNumber']}
-              />
-            </div>
-            <div>
-              <button className='btn btn-next btn-next-width'>Next</button>
-            </div>
+          <div className='input-group'>
+            <label htmlFor='firstName'>First Name</label>
+            <input
+              type='text'
+              name='firstName'
+              placeholder='First Name'
+              defaultValue={state['firstName']}
+            />
+          </div>
+          <div className='input-group'>
+            <label htmlFor='lastName'>Last Name</label>
+            <input
+              type='text'
+              name='lastName'
+              id='lastName'
+              placeholder='Last Name'
+              defaultValue={state['lastName']}
+            />
+          </div>
+          <div className='input-group'>
+            <label htmlFor='phoneNumber'>Number</label>
+            <input
+              type='text'
+              name='phoneNumber'
+              id='phoneNumber'
+              placeholder='Phone Number'
+              defaultValue={state['phoneNumber']}
+            />
+          </div>
+          <div>
+            <button className='btn btn-next btn-next-width'>Next</button>
           </div>
         </form>
       )}

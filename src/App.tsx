@@ -1,6 +1,6 @@
 import React from 'react';
 import PersonalInfo from './components/Personal Info/PersonalInfo';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

@@ -1,0 +1,77 @@
+/**
+  variables
+*/
+
+$border-color: #ccc;
+$button-background-color: #236fb6;
+$form-color: aliceblue;
+$form-header-color: rgb(71, 134, 194);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+/* Global Stylings */
+
+.form {
+  width: clamp(320px, 30%, 430px);
+  margin: 0 auto;
+  border: 1px solid $border-color;
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+  background-color: $form-color;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid $border-color;
+    border-radius: 0.25rem;
+  }
+
+  .input-group {
+    margin: 2rem 0;
+  }
+
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: $button-background-color;
+    color: rgb(251, 251, 251);
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn-next-width {
+    width: 50%;
+    margin-left: auto;
+  }
+
+  .text-center {
+    text-align: center;
+    color: $form-header-color;
+  }
+}
