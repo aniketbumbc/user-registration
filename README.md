@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# User Registration Form Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this application user can able to fill personal information,address and payment information in step form format and on submit user can see payment id.
+- First Name, Last name, Phone number
+- Street Name, House number, zip code, City,
+- Account owner name, Iban number
+- Payment Id at successful submit payment.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- On an application load successfully user will able fill personal information form. Once three all fields of first form then user can able to move next step.
+- If any field missing and click on next button user will see alert message and can't move next step.
+- Onces sucessful step 1 ( personal information ) user can fill address information. At this stage user can can see pervious inforamtion.
+- After successful step 1 and step 2 fill user need to submit payment information for successful payment id will receive.
+- In the case of error user can see error code and message on screen. 
+- At any step user can leave step data still present on form. I handled by using local stoarage. 
 
-### `npm start`
+## Technology
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Frontend
+- Frontend stack is **React-typescript,hooks,redux-typescript for state management and scss.**
+- Implementation of application using five componets,**Payment,Address,PersonaInfo,Error,Success** components.
+- Runs the app in the development mode.
+- Open **http://localhost:3000** to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Describe possible optimizations for your code.
 
-### `npm test`
+- I will add React.fragments to avoid additional html element wrappers.
+- I will try to use Reselect is a simple selector library for Redux, which can be used for building memorized selectors. 
+- I can define selectors as a function, retrieving snippets of the Redux state for React components.
+- Memoize React Components If possible that help faster funcation call because if the function is called with the same values as the previous one then instead of executing function logic it would fetch the result from cache.
+- I will also consider server-side rendering it is a better experience for user, as they will receive viewable content faster than they would with a client-side rendered application.
+- I will consider having two separate files by separating your vendor, or third-party library code from your application code by taking advantage of    CommonsChunkPlugin for webpack. that help me with vendor.bundle.js and app.bundle.js. 
+- By splitting your files, my browser caches less frequently and parallel downloads resources to reduce load time wait.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Which things could be done better, than you’ve done it?
 
-### `npm run build`
+- I will try to implement more styling add on scss style for better visual effects.
+- I would prefered to handle CORS on server side rather than front end side.
+- I will add loder for better ux/ui experience while submiting data.
+- Nice way to validated input fields. Currently alert message in pop-up.
+- Disabel effects on buttons.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
+ **Need apisever run simultaneously**
+```sh
+clone repo
+cd user-registration
+npm install
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Preview
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
