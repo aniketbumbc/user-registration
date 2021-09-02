@@ -13,7 +13,9 @@ In this application user can able to fill personal information,address and payme
 - If any field missing and click on next button user will see alert message and can't move next step.
 - Onces sucessful step 1 ( personal information ) user can fill address information. At this stage user can can see pervious inforamtion.
 - After successful step 1 and step 2 fill user need to submit payment information for successful payment id will receive.
+- On next button click state and local stoarage save and then only persist.
 - In the case of error user can see error code and message on screen.
+- Loader added while submitting payment data.
 - At any step user can leave step data still present on form. I handled by using local stoarage.
 
 ## Technology
@@ -22,6 +24,7 @@ In this application user can able to fill personal information,address and payme
 
 - Frontend stack is **React-typescript,hooks,redux-typescript for state management and scss.**
 - Implementation of application using five componets,**Payment,Address,PersonaInfo,Error,Success** components.
+- I also added **loader** while submiting payment request.
 - Runs the app in the development mode.
 - Open **http://localhost:3000** to view it in the browser.
 
@@ -39,7 +42,6 @@ In this application user can able to fill personal information,address and payme
 
 - I will try to implement more styling add on scss style for better visual effects.
 - I would prefered to handle CORS on server side rather than front end side.
-- I will add loder for better ux/ui experience while submiting data.
 - Nice way to validated input fields. Currently alert message in pop-up.
 - Disabel effects on buttons.
 
