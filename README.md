@@ -58,4 +58,4 @@ npm start
 
 ## Preview
 
-![User Registration](https://media.giphy.com/media/ggstnluTpdPZivZVV3/giphy.gif?cid=790b7611b81b5388e4c01023dd3325e6e0c74979c05b7f92&rid=giphy.gif&ct=g)
+![User Registration](https://media.giphy.com/media/AnI7N6c1ckyyvnSko3/giphy.gif?cid=790b7611635db50a53786ea1176d4f7f1b98234681136eb2&rid=giphy.gif&ct=g)
