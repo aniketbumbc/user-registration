@@ -6,9 +6,12 @@ import { actionCreators, State } from '../../state';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { alertMessage, Payment, demoPaymentApi } from '../../utils';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 const PaymentInfo: React.FC = React.memo(() => {
   const [previous, SetPrevious] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<number>();
   const [paymentId, setPaymentID] = useState<string>('');
   const dispatch = useDispatch();
@@ -53,6 +56,7 @@ const PaymentInfo: React.FC = React.memo(() => {
    */
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    setLoading(true);
     event.preventDefault();
 
     const paymentDetails: Payment = {
@@ -93,10 +97,12 @@ const PaymentInfo: React.FC = React.memo(() => {
           statusText: response.statusText,
           status: response.status,
         };
+        setLoading(false);
         setError(response.status);
         throw new Error(JSON.stringify(errorObj));
       } else {
         const paymentDataId = await response.json();
+        setLoading(false);
         setPaymentID(paymentDataId.paymentDataId);
       }
     } catch (error) {
@@ -144,6 +150,11 @@ const PaymentInfo: React.FC = React.memo(() => {
       {previous && <AddressInfo />}
       {error && <Fallback errorCode={error} />}
       {paymentId && !error && <Success paymentDataId={paymentId} />}
+      <div className='loader'>
+        {loading && (
+          <Loader type='Oval' color='#00BFFF' height={50} width={50} />
+        )}
+      </div>
     </div>
   );
 });
