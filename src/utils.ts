@@ -58,6 +58,6 @@ export interface Error {
   errorCode: number;
 }
 
-export const alertMessage = 'Input field can not blank';
+export const alertMessage = 'Input field cant blank';
 export const demoPaymentApi =
   '/default/wunderfleet-recruiting-backend-dev-save-payment-data';
