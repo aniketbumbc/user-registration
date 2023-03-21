@@ -3,7 +3,7 @@ import { Error } from '../../utils';
 
 const Fallback: React.FC<Error> = ({ errorCode }) => {
   return (
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
       <h3> Something went wrong</h3>
       <h4> Error Code: {errorCode}, Please try again </h4>
       <h2>
